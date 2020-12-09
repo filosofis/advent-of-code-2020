@@ -12,7 +12,6 @@ pub fn run() {
         for word in line.split_whitespace() {
             let (field, mut data) = word.split_at(3);
             data = data.split_at(1).1;
-            //println!("Field {}  Data {}", field, data);
             match field {
                 "byr" => match data.parse::<u16>() {
                     Ok(number) => {
@@ -106,5 +105,5 @@ pub fn run() {
             field_count = 0;
         }
     }
-    println!("valid_count {}", valid_count);
+    println!("valid_count {}, cid_count {}", valid_count, cid_count);
 }
